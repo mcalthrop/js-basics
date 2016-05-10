@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>JS Sandbox</title>
-    <script src="js/index.js"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
 </head>
-
 <body>
-
 <h1>JS Sandbox</h1>
 
 <p>Here's what you do: </p>
@@ -20,7 +18,7 @@
 <h2>Closures</h2>
 
 <p>When you loaded this page, some variables and functions have already been declared &ndash;
-    see <a href="js/index.js" target="_blank"><code>js/index.js</code></a> to see the code.</p>
+    see <a href="src/index.js" target="_blank"><code>src/index.js</code></a> to see the code.</p>
 
 <p>To see the values of these variables, copy and paste the following into the JS console:</p>
 
@@ -47,7 +45,6 @@ appendStringToThisGreeting.bind(context)('NewYear');
 
 So you can see how using the <code>bind()</code> method allows us to control the value of <code>this</code> within the
 <code>appendStringToThisGreeting()</code> function.
-</body>
 
 <h3>Setting the context of a <code>forEach()</code> anonymous function</h3>
 
@@ -80,4 +77,6 @@ console.log('context:', context);
 </pre>
 
 
+<script src="dist/bundle.js"></script>
+</body>
 </html>
