@@ -1,15 +1,21 @@
-var suffix = '.blah';
 var numbers = [100, 200, 300];
 var context = {
-    a: 1,
-    b: 2
+    greeting: 'Merry'
 };
 
-function appendString(stringToAppendTo) {
-    console.log('appendString(): this:', this);
-
-    return stringToAppendTo + suffix;
+function appendStringToThisGreeting(stringToAppend) {
+    console.log('appendStringToThisGreeting(): this:', this);
+    this.greeting += stringToAppend;
+    console.log('appendStringToThisGreeting(): this.greeting:', this.greeting, '; context.greeting:', context.greeting);
 }
+
+this.greeting = 'Happy';
+console.log('--- top of script: this.greeting:', this.greeting, '; context.greeting:', context.greeting);
+console.log('--- call appendStringToThisGreeting() without context:');
+appendStringToThisGreeting('Hannukah');
+
+console.log('--- call appendStringToThisGreeting() - this time providing context:');
+appendStringToThisGreeting.bind(context)('Christmas');
 
 console.log('--- Use forEach() loop without providing context:');
 numbers.forEach(function (number, index) {
