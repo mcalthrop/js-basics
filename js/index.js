@@ -1,28 +1,14 @@
+// assign a value to the `window` variable, which
+window.greeting = 'Merry';
+// declare an array of numbers for later use
 var numbers = [100, 200, 300];
+// declare an object that will be bound in order to provide context
 var context = {
-    greeting: 'Merry'
+    greeting: 'Happy'
 };
 
 function appendStringToThisGreeting(stringToAppend) {
     console.log('appendStringToThisGreeting(): this:', this);
     this.greeting += stringToAppend;
-    console.log('appendStringToThisGreeting(): this.greeting:', this.greeting, '; context.greeting:', context.greeting);
+    console.log('appendStringToThisGreeting(): after append: this.greeting:', this.greeting, '; context.greeting:', context.greeting);
 }
-
-this.greeting = 'Happy';
-console.log('--- top of script: this.greeting:', this.greeting, '; context.greeting:', context.greeting);
-console.log('--- call appendStringToThisGreeting() without context:');
-appendStringToThisGreeting('Hannukah');
-
-console.log('--- call appendStringToThisGreeting() - this time providing context:');
-appendStringToThisGreeting.bind(context)('Christmas');
-
-console.log('--- Use forEach() loop without providing context:');
-numbers.forEach(function (number, index) {
-    console.log('index:', index, '; number:', number, '; context:', context, ', this:', this);
-});
-
-console.log('--- Use forEach() loop - this time providing context:');
-numbers.forEach(function (number, index) {
-    console.log('index:', index, '; number:', number, '; context:', context, ', this:', this);
-}.bind(context));

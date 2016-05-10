@@ -4,7 +4,7 @@
 <head>
     <title>JS Sandbox</title>
     <script src="js/index.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
 </head>
 
 <body>
@@ -14,10 +14,70 @@
 <p>Here's what you do: </p>
 <ul>
     <li>Open the JS console</li>
-    <li>Refresh this page</li>
-    <li>Start playing!</li>
+    <li>Follow the instructions below</li>
 </ul>
 
+<h2>Closures</h2>
+
+<p>When you loaded this page, some variables and functions have already been declared &ndash;
+    see <a href="js/index.js" target="_blank"><code>js/index.js</code></a> to see the code.</p>
+
+<p>To see the values of these variables, copy and paste the following into the JS console:</p>
+
+<pre>
+console.log('window.greeting:', window.greeting);
+console.log('context:', context);
+</pre>
+
+<h3>Replacing the value of <code>this</code> within a function</h3>
+
+<p>Let's see what happens when we call the <code>appendStringToThisGreeting()</code> function as is:</p>
+
+<pre>
+appendStringToThisGreeting('Christmas');
+</pre>
+
+<p>And now we'll use the JavaScript <a
+        href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind"
+        target="_blank"><code>bind()</code></a> method to call it providing a context object:</p>
+
+<pre>
+appendStringToThisGreeting.bind(context)('NewYear');
+</pre>
+
+So you can see how using the <code>bind()</code> method allows us to control the value of <code>this</code> within the
+<code>appendStringToThisGreeting()</code> function.
 </body>
+
+<h3>Setting the context of a <code>forEach()</code> anonymous function</h3>
+
+<p>If we use a JavaScript <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"
+        target="_blank"><code>forEach()</code></a> loop without providing any context, we can see the value of
+    <code>this</code> within the anonymous function:</p>
+
+<pre>
+numbers.forEach(function (number, index) {
+    console.log('index:', index, '; number:', number, '; context:', context, ', this:', this);
+});
+</pre>
+
+<p>Now see what happens when we provide it with some context:</p>
+
+<pre>
+numbers.forEach(function (number, index) {
+    console.log('index:', index, '; number:', number, '; context:', context, ', this:', this);
+}.bind(context));
+</pre>
+
+<h3>What has changed?</h3>
+
+<p>Let's look at those variables again:</p>
+
+<pre>
+console.log('window.greeting:', window.greeting);
+console.log('context:', context);
+</pre>
+
 
 </html>
