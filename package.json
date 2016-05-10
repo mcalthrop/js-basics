@@ -10,7 +10,7 @@
     "watch": "^0.18.0"
   },
   "scripts": {
-    "start": "watch --interval=0.5 \"rollup -c\" src/",
+    "start": "watch --interval=0.5 \"rollup -c --no-treeshake\" src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
