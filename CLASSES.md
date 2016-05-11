@@ -24,7 +24,7 @@ Note the following:
 
 ## Adding a static property to the class
 
-Thinking ahead, we know that in order to calculate the circumference of the circle (and possibly later add a method to calculate the area), we will need the value of &pi;. This does not need to be added to every instantiation of the `Circle` class, so we can it a static property:
+Thinking ahead, we know that in order to calculate the circumference of the circle (and possibly later add a method to calculate the area), we will need the value of &pi;. This does not need to be added to every instantiation of the `Circle` class, so we can make it a static property:
 
 ``` js
 Circle.PI = 3.1415927;
