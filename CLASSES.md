@@ -17,7 +17,7 @@ function Circle(radius) {
 Note the following:
 
 - the class name, `Circle`, has an _upper-case first letter_ &ndash; this is the convention used for defining a class
-- the instance variable `radius` as a _lower-case first letter_
+- the parameter `radius` and the instance variable `radius` both have a _lower-case first letter_
 - and will be stored on the _instance_ of the class by adding it to the `this` object
 - these naming conventions (and others on this page) are used not just in JavaScript, but in most other object-oriented languages
 
