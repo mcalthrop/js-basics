@@ -24,7 +24,7 @@ Note the following:
 
 ## Adding a static property to the class
 
-Thinking ahead, we know that in order to calculate the circumference of the circle (and possibly later add a method to calculate the area), we will need the value of _pi_. This does not need to be added to every instantiation of the `Circle` class, so we can it a static property:
+Thinking ahead, we know that in order to calculate the circumference of the circle (and possibly later add a method to calculate the area), we will need the value of &pi;. This does not need to be added to every instantiation of the `Circle` class, so we can it a static property:
 
 ``` js
 Circle.PI = 3.1415927;
@@ -32,7 +32,7 @@ Circle.PI = 3.1415927;
 
 Note the convention of using _all upper-case letters_ for a property that will be used as a constant.
 
-> In the real world, we would use `Math.PI`, but here we are adding our own value for _pi_ to demonstrate the use of static properties on a class.
+> In the real world, we would use `Math.PI`, but here we are adding our own value for &pi; to demonstrate the use of static properties on a class.
 
 ## Adding an instance method to the class
 
