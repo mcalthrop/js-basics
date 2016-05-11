@@ -34,7 +34,7 @@ var homeAddress = {
 };
 ```
 
-We can define function that will help us find out which data types are passed by value, and which by reference:
+We can define function that mutates each parameter passed in &ndash; this will help us find out which data types are passed by value, and which by reference:
 
 ``` js
 function updateThings(s, a, n, h) {
