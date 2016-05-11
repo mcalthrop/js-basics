@@ -41,13 +41,15 @@ numbers.forEach(function (number, index) {
 
     if (index === 0) {
         console.log('this:', this);
+        console.log('this === window?', this === window);
+        console.log('this === context?', this === context);
     }
     this.scores.push(newNumber);
-    console.log('index:', index, '; number:', number, '; newNumber:', newNumber, '; context:', context);
+    console.log('numbers[' + index + ']:', number, '; newNumber:', newNumber, '; context.scores:', context.scores);
 });
 </pre>
 
-<p>Now see what happens when we provide it with some context:</p>
+<p>Now see what happens when we bind it to a context object:</p>
 
 <pre>
 numbers.forEach(function (number, index) {
@@ -55,11 +57,15 @@ numbers.forEach(function (number, index) {
 
     if (index === 0) {
         console.log('this:', this);
+        console.log('this === window?', this === window);
+        console.log('this === context?', this === context);
     }
     this.scores.push(newNumber);
-    console.log('index:', index, '; number:', number, '; newNumber:', newNumber, '; context:', context);
+    console.log('numbers[' + index + ']:', number, '; newNumber:', newNumber, '; context.scores:', context.scores);
 }.bind(context));
 </pre>
+
+<p>You can see that in each iteration of the loop, a new element is added to the <code>context.scores</code> array.</p>
 
 <p>Let's check those variables to see what has changed:</p>
 
