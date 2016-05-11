@@ -1,11 +1,8 @@
-# js-sandbox
+# js-basics
 
-Sandbox for playing with JS
+Practical explanation and examples of some JavaScript basics.
 
-## Instructions
+The intended use is to go to one of the pages below, open your JS console, and type in the code as described in each step:
 
-- fork this project
-- run `npm install`
-- then `npm start`
-- open the `index.html` file in your browser
-- follow the instructions on the page
+- [Context](CONTEXT.md)
+- [Classes](CLASSES.md)
