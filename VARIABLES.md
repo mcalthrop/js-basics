@@ -15,7 +15,7 @@ It's helpful to know the building blocks of a language, so here we will be looki
 
 ## What about arrays and functions?
 
-As we will see a bit further down, [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)s and [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)s are both extensions of `Object`.
+[`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)s and [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)s are both extensions of `Object` &ndash; as is [everything in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype#Description).
 
 ## Literals and instances
 
@@ -50,13 +50,9 @@ var nullValue = null;
 
 So when you declare a variable, it becomes an _instance_ of a particular data type.
 
-## Constructors and prototypes
+## Constructors
 
-Now that we have some variable instances, we can examine them to see what properties they have.
-
-### Constructors
-
-Firstly, let's check the `constructor` object is a property of each of the variables we have declared above. You'll need to enter each line into the JS console separately:
+Now that we have some variable instances, we can look at the `constructor` property on each of them:
 
 ``` js
 console.log('aBoolean.constructor:', aBoolean.constructor);
@@ -67,7 +63,7 @@ console.log('anArray.constructor:', anArray.constructor);
 console.log('aFunction.constructor:', aFunction.constructor);
 ```
 
-And do these ones separately:
+And check these ones separately:
 
 ``` js
 console.log('noValueAssigned.constructor:', noValueAssigned.constructor);
@@ -77,36 +73,6 @@ console.log('noValueAssigned.constructor:', noValueAssigned.constructor);
 console.log('nullValue.constructor:', nullValue.constructor);
 ```
 
-### Prototypes
-
-And now let's check if the `prototype` object is a property of each of those variables:
-
-``` js
-console.log('aBoolean.prototype:', aBoolean.prototype);
-console.log('aString.prototype:', aString.prototype);
-console.log('aNumber.prototype:', aNumber.prototype);
-console.log('anObject.prototype:', anObject.prototype);
-console.log('anArray.prototype:', anArray.prototype);
-console.log('aFunction.prototype:', aFunction.prototype);
-```
-
-And do these ones separately:
-
-``` js
-console.log('noValueAssigned.prototype:', noValueAssigned.prototype);
-```
-
-``` js
-console.log('nullValue.prototype:', nullValue.prototype);
-```
-
-
-Some questions:
-
-- which variable(s) have a `prototype` property, and which ones don't?
-- do you know why?
-- did you notice the `prototype` of the `Function`?
-
 ## Passing by value or reference
 
 When passing variables to a function, it's important to know whether they are passed by _value_ or by _reference_:
@@ -114,7 +80,7 @@ When passing variables to a function, it's important to know whether they are pa
 - when passed by _value_ the original variable will not be modifiable
 - but when passed by _reference_, any changes made to the variable within the function will also be made to the variable passed in
 
-We can define function that mutates each parameter passed in &ndash; this will help us find out which data types are passed by value, and which by reference:
+We can define function that mutates each parameter passed in:
 
 ``` js
 function updateVariables(bool, str, num, obj, arr, fun) {
@@ -129,7 +95,7 @@ function updateVariables(bool, str, num, obj, arr, fun) {
 }
 ```
 
-Now we can call this function:
+Now we can call this function, in order to find out which data types are passed by value, and which by reference:
 
 ``` js
 updateVariables(aBoolean, aString, aNumber, anObject, anArray, aFunction);
