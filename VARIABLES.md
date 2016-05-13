@@ -123,3 +123,4 @@ For a more in-depth understanding, you might like to read the following pages fr
 
 - [Primitives](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)
 - [JavaScript data types and data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+- [ES5, ES6, ES2016, ES.Next: What's going on with JavaScript versioning?](http://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/)
