@@ -96,4 +96,4 @@ It would be useful to have a method to calculate the area of the circle too.
 
 Add an instance method to the `Circle` object called `area()` to accomplish this.
 
-You'll need to create a new instance of the class in order to see it working of course.
+You already have the `disc` instance of `Circle`&hellip; do you need to create a new instance of the class in order to see the `area()` method working?
