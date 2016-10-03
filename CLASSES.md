@@ -27,7 +27,7 @@ Note the following:
 Thinking ahead, we know that in order to calculate the circumference of the circle (and possibly later add a method to calculate the area), we will need the value of &pi;. This does not need to be added to every instantiation of the `Circle` class, so we can make it a static property:
 
 ``` js
-Circle.PI = 3.1415927;
+Circle.PI = 3.14;
 ```
 
 Note the convention of using _all upper-case letters_ for a property that will be used as a constant.
@@ -56,13 +56,13 @@ Note the following:
 Now we are ready to use the class we have defined, so firstly we create an instance of it:
 
 ``` js
-var disc = new Circle(2);
+var disc = new Circle(3);
 ```
 
 Note the following:
 
 - the convention of naming an instance of a class with a _lower-case first letter_
-- we pass the value `2` as the parameter to the constructor, which will be used as the value for the radius of this instance of `Circle`
+- we pass the value `3` as the parameter to the constructor, which will be used as the value for the radius of this instance of `Circle`
 
 ## Calculating the circumference
 
@@ -73,6 +73,22 @@ disc.circumference();
 ```
 
 And that's it!
+
+## Roundup
+
+So to recap, the final definition of `Circle` class will look like this:
+
+``` js
+function Circle(radius) {
+  this.radius = radius;
+}
+
+Circle.PI = 3.14;
+
+Circle.prototype.circumference = function () {
+  return 2 * Circle.PI * this.radius;
+};
+```
 
 ## Practice
 
