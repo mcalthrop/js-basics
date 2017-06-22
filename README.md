@@ -11,3 +11,7 @@ The intended use is to go to one of the pages below, open your JS console, and t
 - [Variables](VARIABLES.md)
 - [Context](CONTEXT.md)
 - [Classes](CLASSES.md)
+
+## License
+
+[MIT](LICENSE)
